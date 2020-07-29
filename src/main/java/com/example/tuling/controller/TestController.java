@@ -1,5 +1,7 @@
 package com.example.tuling.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.ByteArrayOutputStream;
@@ -8,18 +10,21 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
+
 @RestController
 @RequestMapping("/test")
+@Api(value = "测试controller")
 public class TestController {
 
     @GetMapping("/aaa")
+    @ApiOperation(value = "测试请求requestGet", notes="测试请求requestGet")
     public String requestGet(){
         String str = "你好呀！";
         return str;
     }
 
-    @PostMapping("/formSubmit")
     @ResponseBody
+    @PostMapping("/formSubmit")
     public String formSubmit(@RequestParam(value = "aaa") String aaa,
                              @RequestParam(value = "bbb") String bbb) throws Exception {
         System.out.println(aaa);
