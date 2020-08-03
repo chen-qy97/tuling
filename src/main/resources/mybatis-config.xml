@@ -3,9 +3,24 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <settings>
+        <!--设置运行时行为 开启缓存等-->
+        <setting name="" value=""/>
+    </settings>
+    <typeAliases>
+        <typeAlias type="com.example.tuling.mybatis.pojo.User" alias="user"></typeAlias>
+    </typeAliases>
+
+    <plugins>
+        <!--监控 分页  埋点 等都可以通过插件实现-->
+        <!--sql 语句日志打印-->
+        <plugin interceptor="com.example.tuling.mybatis.plugin.SqlPrintereceptor"></plugin>
+    </plugins>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
+            <!--POOLED  通过数据库连接池的方式连接数据库-->
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>
                 <property name="url" value="${url}"/>
@@ -16,5 +31,6 @@
     </environments>
     <mappers>
         <mapper resource="mybatis/UserMapping.xml"/>
+        <mapper resource="com.example.tuling.mybatis.mapper.UserMapper"></mapper>
     </mappers>
 </configuration>
