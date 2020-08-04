@@ -1,5 +1,8 @@
 package com.example.tuling.mybatis.pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 public class User implements Serializable {
@@ -9,6 +12,10 @@ public class User implements Serializable {
     private Integer age;
     private String phone;
     private String desc;
+
+    @Getter
+    @Setter
+    private String xxx;
 
     public void setId(Integer id) {
         this.id = id;
