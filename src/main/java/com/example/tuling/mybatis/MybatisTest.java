@@ -10,6 +10,13 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * mybatis一级缓存只作用于一个session
+ *
+ *
+ * 二级缓存作用于全局
+ * 开启二级缓存：mybatis-config.xml  setting配置
+ */
 //@Slf4j
 public class MybatisTest {
 
@@ -30,9 +37,19 @@ public class MybatisTest {
             inputStream = Resources.getResourceAsStream(resource);
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
+            /* sqlSession 一级缓存的作用域 */
             SqlSession sqlSession = sqlSessionFactory.openSession();
             /*mybatis-config.xml 配置  <mapper resource="mybatis/UserMapping.xml"/> */
             User user = sqlSession.selectOne("com.example.tuling.mybatis.mapper.UserMapper.selectUser" ,1);
+            User user2 = sqlSession.selectOne("com.example.tuling.mybatis.mapper.UserMapper.selectUser" ,1);
+            sqlSession.commit();
+
+            SqlSession sqlSession1 = sqlSessionFactory.openSession();
+            /*mybatis-config.xml 配置  <mapper resource="mybatis/UserMapping.xml"/> */
+            User user3 = sqlSession1.selectOne("com.example.tuling.mybatis.mapper.UserMapper.selectUser" ,1);
+            User user4 = sqlSession1.selectOne("com.example.tuling.mybatis.mapper.UserMapper.selectUser" ,1);
+            sqlSession1.commit();
+
             System.out.println(user);
             //log.info("user: {}",user);
         } catch (IOException e) {

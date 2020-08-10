@@ -5,7 +5,8 @@
 <configuration>
     <settings>
         <!--设置运行时行为 开启缓存等-->
-        <setting name="" value=""/>
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
     </settings>
     <typeAliases>
         <typeAlias type="com.example.tuling.mybatis.pojo.User" alias="user"></typeAlias>

@@ -3,8 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.tuling.mybatis.mapper.UserMapper">
-   <!-- <select id="selectUser" resultType="com.example.tuling.mybatis.pojo.User">
+    <!--自定义二级缓存 LRU:就近原则  采用redis做缓存-->
+    <cache eviction="LRU" type="com.baomidou.cache.MybatisRedisCache" />
+    <!-- <select id="selectUser" resultType="com.example.tuling.mybatis.pojo.User">
             resultType 对应的类型在 mybatis-config.xml 文件中 typeAliases 属性进行配置 -->
+
     <select id="selectUser" parameterType="integer" resultType="user">
         select * from user where id = #{id}
     </select>
