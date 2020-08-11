@@ -22,15 +22,16 @@
             <transactionManager type="JDBC"/>
             <!--POOLED  通过数据库连接池的方式连接数据库-->
             <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
-                <property name="url" value="${url}"/>
-                <property name="username" value="${username}"/>
-                <property name="password" value="${password}"/>
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://172.16.26.13:3306/test?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;failOverReadOnly=true&amp;useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="MySQL!123@"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mybatis/UserMapping.xml"/>
+        <!--<mapper resource="mybatis/UserMapping.xml"/>-->
+        <mapper resource="com.example.tuling.mybatis.mapper.SexMapper"></mapper>
         <mapper resource="com.example.tuling.mybatis.mapper.UserMapper"></mapper>
     </mappers>
 </configuration>

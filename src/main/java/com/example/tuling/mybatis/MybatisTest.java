@@ -1,6 +1,8 @@
 package com.example.tuling.mybatis;
 
+import com.example.tuling.mybatis.mapper.SexMapper;
 import com.example.tuling.mybatis.mapper.UserMapper;
+import com.example.tuling.mybatis.pojo.Sex;
 import com.example.tuling.mybatis.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,14 +12,13 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.IOException;
 import java.io.InputStream;
 
-//@Slf4j
 public class MybatisTest {
 
     public static void main(String[] args) {
         String resource = "mybatis-config.xml";
 
         /* 通过xml配置文件执行sql */
-        testForXml(resource);
+        //testForXml(resource);
 
         /* 通过注解的方式来执行sql */
         testForAnnotation(resource);
@@ -48,9 +49,9 @@ public class MybatisTest {
 
             SqlSession sqlSession = sqlSessionFactory.openSession();
             /*mybatis-config.xml 配置  <mapper resource="com.example.tuling.mybatis.mapper.UserMapper"></mapper> */
-            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-            User user = mapper.selectUser(1);
-            System.out.println(user);
+            SexMapper mapper = sqlSession.getMapper(SexMapper.class);
+            Sex sex = mapper.selectUser(1);
+            System.out.println(sex);
             //log.info("user: {}",user);
         } catch (IOException e) {
             e.printStackTrace();
