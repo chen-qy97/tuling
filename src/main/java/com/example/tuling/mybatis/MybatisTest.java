@@ -65,9 +65,9 @@ public class MybatisTest {
 
             SqlSession sqlSession = sqlSessionFactory.openSession();
             /*mybatis-config.xml 配置  <mapper resource="com.example.tuling.mybatis.mapper.UserMapper"></mapper> */
-            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-            User user = mapper.selectUser(1);
-            System.out.println(user);
+            SexMapper mapper = sqlSession.getMapper(SexMapper.class);
+            Sex sex = mapper.selectUser(1);
+            System.out.println(sex);
             //log.info("user: {}",user);
         } catch (IOException e) {
             e.printStackTrace();
