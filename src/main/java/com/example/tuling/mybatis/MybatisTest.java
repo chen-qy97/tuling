@@ -1,6 +1,8 @@
 package com.example.tuling.mybatis;
 
+import com.example.tuling.mybatis.mapper.SexMapper;
 import com.example.tuling.mybatis.mapper.UserMapper;
+import com.example.tuling.mybatis.pojo.Sex;
 import com.example.tuling.mybatis.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
