@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--默认构造函数构建Bean-->
+    <bean class="com.example.springioc.HelloSpring"/>
+
+    <!--指定构造函数构建Bean-->
+    <!--<bean class="com.example.springioc.HelloSpring" autowire="byName">-->
+    <!--<bean class="com.example.springioc.HelloSpring" autowire="constructor">-->
+    <bean class="com.example.springioc.HelloSpring">
+        <!--两种方式  一种通过index  对应构造方法的第几个参数   另一种通过name 和属性名称对应
+        name: 构造方法参数
+        type: 参数类型
+        index: 参数缩影，从0开始
+        value: 参数值，Spring 会自动转换成参数实际类型值
+        ref: 引用容器的其他对象-->
+        <constructor-arg index="0" value="luban"/>
+        <constructor-arg name="sex" value="1"/>
+    </bean>
+
+    <bean id="hi" class="com.example.springioc.Hi"></bean>
+    <bean class="com.example.springioc.Hi" primary="true"></bean>
+
+    <!--基于静态工厂方法创建-->
+    <bean class="com.example.springioc.HelloSpring" factory-method="build">
+        <constructor-arg name="type" value="A"/>
+    </bean>
+
+    <!--基于FactoryBean创建-->
+    <bean id="driver" class="com.example.springioc.DriverFactoryBean">
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306"></property>
+    </bean>
+</beans>
