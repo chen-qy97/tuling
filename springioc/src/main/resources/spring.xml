@@ -30,6 +30,6 @@
 
     <!--基于FactoryBean创建-->
     <bean id="driver" class="com.example.springioc.DriverFactoryBean">
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://172.16.26.13:3306/test"></property>
     </bean>
 </beans>

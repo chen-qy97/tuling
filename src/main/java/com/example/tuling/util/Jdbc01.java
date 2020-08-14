@@ -3,7 +3,6 @@ package com.example.tuling.util;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.UUID;
 
 public class Jdbc01 {
 
