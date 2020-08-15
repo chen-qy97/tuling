@@ -20,7 +20,7 @@
         <constructor-arg name="sex" value="1"/>
     </bean>
 
-    <bean id="hi" class="com.example.springioc.Hi"></bean>
+    <bean id="hi" name="hi2" class="com.example.springioc.Hi"></bean>
     <bean class="com.example.springioc.Hi" primary="true"></bean>
 
     <!--基于静态工厂方法创建-->
