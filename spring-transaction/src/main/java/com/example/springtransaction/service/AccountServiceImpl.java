@@ -2,18 +2,22 @@ package com.example.springtransaction.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.SimpleFormatter;
 
+@Service
 public class AccountServiceImpl implements AccountService {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public void addAccount(String name, int initMoney) {
         String accountid = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         jdbcTemplate.update("insert into account (accountName, user, money) values (?, ?, ?)", accountid);

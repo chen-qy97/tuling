@@ -1,4 +1,7 @@
 package com.example.springtransaction.service;
 
-public class UserService {
+public interface UserService {
+
+    void createUser(String name);
+
 }
