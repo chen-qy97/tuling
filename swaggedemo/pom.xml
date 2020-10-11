@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>swaggedemo</artifactId>
+    <artifactId>swaggerdemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>swaggedemo</name>
+    <name>swaggerdemo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
+            <version>2.7.0</version>
         </dependency>
 
         <dependency>
@@ -98,6 +98,8 @@
             </plugin>
 
         </plugins>
+
+
     </build>
 
 </project>
