@@ -1,0 +1,10 @@
+server:
+  servlet:
+    context-path: /tuling-server
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.26.13:3306/sbk_access?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=true&useSSL=false
+    username: root
+    password: MySQL!123@

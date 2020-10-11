@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--设置运行时行为 开启缓存等-->
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="false"/>
+    </settings>
+    <typeAliases>
+        <typeAlias type="com.example.swaggedemo.mybatis.pojo.User" alias="user"></typeAlias>
+    </typeAliases>
+
+    <plugins>
+        <!--监控 分页  埋点 等都可以通过插件实现-->
+        <!--sql 语句日志打印-->
+        <plugin interceptor="com.example.swaggedemo.mybatis.plugin.SqlPrintereceptor"></plugin>
+    </plugins>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!--POOLED  通过数据库连接池的方式连接数据库-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://172.16.26.13:3306/test?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;failOverReadOnly=true&amp;useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="MySQL!123@"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--<mapper resource="mybatis/UserMapping.xml"/>-->
+        <mapper resource="com.example.swaggedemo.mybatis.mapper.SexMapper"></mapper>
+        <mapper resource="com.example.swaggedemo.mybatis.mapper.UserMapper"></mapper>
+    </mappers>
+</configuration>

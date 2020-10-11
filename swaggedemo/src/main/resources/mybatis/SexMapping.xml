@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tuling.mybatis.mapper.SexMapper">
+   <!-- <select id="selectUser" resultType="com.example.tuling.mybatis.pojo.User">
+            resultType 对应的类型在 mybatis-config.xml 文件中 typeAliases 属性进行配置-->
+    <select id="selectUser" resultType="com.example.swaggedemo.mybatis.pojo.Sex">
+        select * from user where id = #{id}
+    </select>
+</mapper>
