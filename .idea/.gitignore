@@ -1,2 +1,15 @@
 # Default ignored files
 /workspace.xml
+**/target/*
+.idea/
+
+## File-based project format:
+*.iws
+*.iml
+*.ipr
+*.pdb
+*.log
+
+
+**/LOG_PATH_IS_UNDEFINED/
+**/logs/

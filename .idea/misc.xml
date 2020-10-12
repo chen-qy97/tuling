@@ -5,6 +5,10 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/swaggedemo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis04/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis03/pom.xml" />
+        <option value="$PROJECT_DIR$/springioc/pom.xml" />
       </list>
     </option>
   </component>

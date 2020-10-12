@@ -7,19 +7,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mybatis03" />
+        <module name="spring-transaction" />
+        <module name="springioc" />
         <module name="swaggedemo" />
+        <module name="mybatis04" />
+      </profile>
+      <profile name="Annotation profile for tuling" enabled="true">
+        <sourceOutputDir name="../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
         <module name="mybatisdemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mybatis03" target="1.8" />
+      <module name="mybatis04" target="1.8" />
       <module name="mybatisdemo" target="1.8" />
+      <module name="spring-transaction" target="1.8" />
+      <module name="springioc" target="1.8" />
       <module name="swaggedemo" target="1.8" />
       <module name="tuling" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mybatis03" options="-parameters" />
+      <module name="mybatis04" options="-parameters" />
       <module name="mybatisdemo" options="-parameters" />
+      <module name="spring-transaction" options="-parameters" />
+      <module name="springioc" options="-parameters" />
       <module name="swaggedemo" options="-parameters" />
       <module name="tuling" options="-parameters" />
     </option>
