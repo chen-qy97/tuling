@@ -8,16 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="swaggedemo" />
-        <module name="tuling" />
+        <module name="mybatisdemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mybatisdemo" target="1.8" />
       <module name="swaggedemo" target="1.8" />
       <module name="tuling" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mybatisdemo" options="-parameters" />
       <module name="swaggedemo" options="-parameters" />
       <module name="tuling" options="-parameters" />
     </option>
